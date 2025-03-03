@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Header from "./layout/Header";
 import HeroSection from "./sections/HeroSection";
 import DirectoriesSection from "./sections/DirectoriesSection";
-import ToolsSection from "./sections/ToolsSection";
+import AiToolsSection from "./sections/AiToolsSection";
 import Footer from "./layout/Footer";
 import SearchOverlay from "./search/SearchOverlay";
 
@@ -28,10 +28,49 @@ const Home = () => {
       {/* Background gradient */}
       <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-black/80 to-blue-900/20 pointer-events-none z-0" />
 
-      {/* Floating orbs */}
-      <div className="fixed top-20 right-20 w-64 h-64 rounded-full bg-yellow-500/40 blur-3xl pointer-events-none z-0 animate-float-slow" />
-      <div className="fixed bottom-40 left-20 w-80 h-80 rounded-full bg-purple-500/30 blur-3xl pointer-events-none z-0 animate-float-medium" />
-      <div className="fixed top-1/2 left-1/3 w-40 h-40 rounded-full bg-blue-500/30 blur-3xl pointer-events-none z-0 animate-float-fast" />
+      {/* Floating orbs with animation */}
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.4, 0.6, 0.4],
+          x: [0, 20, 0],
+          y: [0, -20, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        className="fixed top-20 right-20 w-64 h-64 rounded-full bg-yellow-500/40 blur-3xl pointer-events-none z-0"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.3, 0.5, 0.3],
+          x: [0, -30, 0],
+          y: [0, 30, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        className="fixed bottom-40 left-20 w-80 h-80 rounded-full bg-purple-500/30 blur-3xl pointer-events-none z-0"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.4, 1],
+          opacity: [0.3, 0.7, 0.3],
+          x: [0, 15, 0],
+          y: [0, 15, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        className="fixed top-1/2 left-1/3 w-40 h-40 rounded-full bg-blue-500/30 blur-3xl pointer-events-none z-0"
+      />
 
       {/* Subtle background overlay */}
       <div className="fixed inset-0 bg-[url('https://images.unsplash.com/photo-1677442135136-760c813028c4?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center opacity-30 pointer-events-none z-0" />
@@ -61,7 +100,7 @@ const Home = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             id="tools"
           >
-            <ToolsSection />
+            <AiToolsSection />
           </motion.div>
         </main>
 

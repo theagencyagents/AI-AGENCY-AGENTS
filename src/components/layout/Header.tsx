@@ -165,6 +165,142 @@ const Header = ({
                   AI Tools
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/chatbots"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  AI Chatbots
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/art-image"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  AI Art & Images
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/content-seo"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Content & SEO
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/video"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Video Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/music-audio"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Music & Audio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/productivity"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Productivity
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/meeting"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Meeting Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/search"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Search Engines
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/research"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Research Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/writing"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Writing Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/marketing"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Marketing Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/presentation"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Presentation Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/code"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Code Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/education"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Education Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/design"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Design Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/finance"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Finance Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/health"
+                  className="block py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
+                >
+                  Health Tools
+                </Link>
+              </li>
             </ul>
           </nav>
         </motion.div>

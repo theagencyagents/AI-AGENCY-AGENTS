@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-interface ToolCardProps {
+interface AiToolCardProps {
   name?: string;
   description?: string;
   category?: string;
@@ -21,14 +21,85 @@ interface ToolCardProps {
   externalLink?: string;
 }
 
-const ToolCard = ({
-  name = "AI Tool Pro",
-  description = "A powerful AI tool that helps with various tasks including content creation, research, and data analysis.",
+const AiToolCard = ({
+  name = "AI Assistant Pro",
+  description = "A powerful AI assistant that helps with various tasks including content creation, research, and data analysis.",
   category = "Productivity",
   rating = 4.8,
   imageUrl = "https://images.unsplash.com/photo-1677442135136-760c813028c4?q=80&w=300&h=200&auto=format&fit=crop",
   externalLink = "https://example.com/ai-tool",
-}: ToolCardProps) => {
+}: AiToolCardProps) => {
+  // Function to get a themed image based on category
+  const getThemedImage = () => {
+    const categoryLower = category.toLowerCase();
+
+    if (categoryLower.includes("chat")) {
+      return "https://images.unsplash.com/photo-1677442135136-760c813028c4?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("art") ||
+      categoryLower.includes("image")
+    ) {
+      return "https://images.unsplash.com/photo-1675271591211-930246f80c5e?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("content") ||
+      categoryLower.includes("seo")
+    ) {
+      return "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("video") ||
+      categoryLower.includes("editing")
+    ) {
+      return "https://images.unsplash.com/photo-1626908013351-800ddd734b8a?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("music") ||
+      categoryLower.includes("audio")
+    ) {
+      return "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("productivity") ||
+      categoryLower.includes("growth")
+    ) {
+      return "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("meeting") ||
+      categoryLower.includes("assistant")
+    ) {
+      return "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("code") ||
+      categoryLower.includes("database")
+    ) {
+      return "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=800&auto=format&fit=crop";
+    } else if (categoryLower.includes("writing")) {
+      return "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("sales") ||
+      categoryLower.includes("marketing")
+    ) {
+      return "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("search") ||
+      categoryLower.includes("research")
+    ) {
+      return "https://images.unsplash.com/photo-1655720828018-7467e2ecc6b1?w=800&auto=format&fit=crop";
+    } else if (
+      categoryLower.includes("slides") ||
+      categoryLower.includes("presentations")
+    ) {
+      return "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop";
+    } else {
+      return "https://images.unsplash.com/photo-1673297001830-e7b06d8d8a34?w=800&auto=format&fit=crop";
+    }
+  };
+
+  // Use provided image or get a themed one
+  const displayImage = imageUrl || getThemedImage();
+
+  // Add error handling for images
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.src = getThemedImage();
+  };
+
   // Get rating color based on score
   const getRatingColor = () => {
     if (rating >= 4.8) return "text-yellow-500 fill-yellow-500";
@@ -51,12 +122,9 @@ const ToolCard = ({
         <div className="relative z-10">
           <div className="h-40 w-full overflow-hidden">
             <img
-              src={imageUrl}
+              src={displayImage}
               alt={name}
-              onError={(e) => {
-                e.currentTarget.src =
-                  "https://images.unsplash.com/photo-1677442135136-760c813028c4?q=80&w=300&h=200&auto=format&fit=crop";
-              }}
+              onError={handleImageError}
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </div>
@@ -68,7 +136,7 @@ const ToolCard = ({
                 variant="secondary"
                 className="bg-white/10 text-white hover:bg-white/20"
               >
-                {category}
+                {category.split(" ").slice(1).join(" ")}
               </Badge>
             </div>
             <div className="flex items-center mt-1">
@@ -106,4 +174,4 @@ const ToolCard = ({
   );
 };
 
-export default ToolCard;
+export default AiToolCard;

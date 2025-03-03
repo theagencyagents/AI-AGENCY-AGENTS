@@ -1,21 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Header from "../layout/Header";
-import AiToolsSection from "../sections/AiToolsSection";
+import ChatbotSection from "../sections/ChatbotSection";
 import Footer from "../layout/Footer";
-import { useSearchParams } from "react-router-dom";
 
-const ToolsPage = () => {
-  const [searchParams] = useSearchParams();
-  const categoryParam = searchParams.get("category");
-
+const ChatbotPage = () => {
   return (
     <div className="min-h-screen bg-black transition-colors duration-300">
       {/* Background gradient */}
       <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-black/80 to-blue-900/20 pointer-events-none z-0" />
 
       {/* Floating orbs */}
-      <div className="fixed top-20 right-20 w-64 h-64 rounded-full bg-yellow-500/40 blur-3xl pointer-events-none z-0 animate-float-slow" />
+      <div className="fixed top-20 right-20 w-64 h-64 rounded-full bg-blue-500/40 blur-3xl pointer-events-none z-0 animate-float-slow" />
       <div className="fixed bottom-40 left-20 w-80 h-80 rounded-full bg-purple-500/30 blur-3xl pointer-events-none z-0 animate-float-medium" />
 
       {/* Subtle background overlay */}
@@ -32,24 +28,15 @@ const ToolsPage = () => {
             className="pt-10 pb-4 px-4 md:px-8 max-w-7xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              AI Tools Collection
+              AI Chatbots Collection
             </h1>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Browse our comprehensive collection of AI tools, ranked by rating
-              and usefulness
+              Discover the most advanced AI chatbots and conversational
+              assistants
             </p>
           </motion.div>
 
-          <AiToolsSection
-            title={categoryParam ? `${categoryParam} Tools` : "All AI Tools"}
-            description={
-              categoryParam
-                ? `Explore our collection of ${categoryParam} tools, carefully selected for maximum impact`
-                : "Explore our complete collection of AI tools, carefully selected for maximum impact"
-            }
-            showAll={true}
-            initialCategory={categoryParam || "all"}
-          />
+          <ChatbotSection />
         </main>
 
         <Footer />
@@ -58,4 +45,4 @@ const ToolsPage = () => {
   );
 };
 
-export default ToolsPage;
+export default ChatbotPage;
